@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Site focado em educação com o intuito de levar educação para as pessoas e mostrar que aprender não precisa ser chato"
+    />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+
+  <body>
+    <header>
+      <input type="radio" name="header" id="openNav" />
+      <input type="radio" name="header" id="closeNav" />
+
+      <div class="logo-container">
+        <a href="index.html" class="logo">Education</a>
+      </div>
+
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="course.html">Courses</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+      </nav>
+
+      <div class="header-button">
+        <label for="openNav" class="fa-solid fa-bars nav-bar"></label>
+        <label for="closeNav" class="fa-solid fa-xmark nav-close"></label>
+      </div>
+    </header>
+    <main>
+      <div class="user-panel">
+        <input type="radio" name="panel" id="showL" checked />
+        <input type="radio" name="panel" id="showR" />
+
+        <div class="panel-btn">
+          <label for="showL" class="l-btn">Login</label>
+          <label for="showR" class="r-btn">Register</label>
+        </div>
+
+        <form action="#" method="post" class="login active">
+          <p>Login Now</p>
+
+          <div class="email-container">
+            <input type="email" name="email" placeholder="Enter your email" />
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
+          <div class="password-container">
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+            <i class="fa-solid fa-lock"></i>
+          </div>
+
+          <div class="login-btn">
+            <div>
+              <input type="checkbox" name="remember" id="remember" />
+              <label for="remember">Remember-me</label>
+            </div>
+
+            <a href="#">Forgot password</a>
+          </div>
+
+          <input type="submit" value="Login now" />
+        </form>
+
+        <form action="#" method="post" class="register">
+          <p>Register Now</p>
+
+          <div class="email-container">
+            <input type="email" name="email" placeholder="Enter your email" />
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
+          <div class="password-container">
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+            <i class="fa-solid fa-lock"></i>
+          </div>
+
+          <div class="password-container">
+            <input
+              type="password"
+              name="password"
+              placeholder="Confirm your password"
+            />
+            <i class="fa-solid fa-lock"></i>
+          </div>
+
+          <input type="submit" value="Register Now" />
+        </form>
+        <!--  -->
+      </div>
+
+      <script
+        src="https://kit.fontawesome.com/37ba8401b1.js"
+        crossorigin="anonymous"
+      ></script>
+    </main>
+  </body>
+</html>

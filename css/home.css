@@ -1,0 +1,564 @@
+:root {
+    --pink: #ff6a6d;
+    --light-pink: #fff7f7;
+    --white: #fff;
+    --light-color: #777;
+    --light-black: #444;
+    --box-shadow: 0 0.6rem 0.9rem rgba(0, 0, 0, 0.2);
+    --border: 0.1rem solid #ff6a6d;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Ubuntu, "Segoe UI",
+        "Helvetica Neue", arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+img {
+    aspect-ratio: attr(width) / attr(height);
+}
+
+/* head start */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 1rem 7vw;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: auto;
+    width: 100vw;
+}
+
+header input[type=radio],
+header .nav-close {
+    display: none;
+}
+
+#openNav:checked~.header-nav {
+    transform: scaleY(1);
+}
+
+#openNav:checked~.header-button .nav-bar {
+    display: none;
+}
+
+#openNav:checked~.header-button .nav-close {
+    display: block;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 0.57rem 0;
+    transition: color 0.5s;
+}
+
+.logo:hover {
+    color: #ff6a6d;
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--white);
+    position: absolute;
+    top: 56px;
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.5s;
+}
+
+.header-nav a {
+    width: 100%;
+    text-align: center;
+    padding: 0.63rem 0;
+    font-size: 1.2rem;
+    color: black;
+    cursor: pointer;
+    transition: background 0.5s, color 0.5s;
+}
+
+.header-nav a~a {
+    border-top: 1px solid grey;
+}
+
+.header-nav a:hover {
+    background-color: #ff6a6d;
+}
+
+.nav-bar,
+.nav-close {
+    cursor: pointer;
+    transition: color 0.5s;
+    font-size: 1.5rem;
+    padding: 0.78rem;
+}
+
+.nav-bar:hover,
+.nav-close:hover {
+    color: var(--pink);
+}
+
+.nav-bar.fa-xmark::before {
+    display: inline-block;
+    width: 14px;
+}
+
+/* head end */
+
+/* Main start */
+
+main {
+    margin-top: 81px;
+    width: 100%;
+    height: auto;
+}
+
+/* home start */
+
+.home {
+    position: relative;
+}
+
+.no-js .home-item:not(.home-item:nth-of-type(1)) {
+    display: none;
+}
+
+.home-item img {
+    display: block;
+    height: 70vh;
+    width: 100vw;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.home-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    font-weight: bold;
+    color: var(--white);
+    padding: 0 0 0 7vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100vw;
+}
+
+.home-btn {
+    padding: 0.61rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    color: black;
+    background-color: var(--white);
+    transition: background 0.5s, color 0.5s;
+}
+
+.home-btn:hover {
+    background: #ff6a6d;
+}
+
+.home-dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.home-dots .glider-dot.active {
+    background-color: var(--pink);
+}
+
+/* home end */
+
+/* learn start */
+
+.learn {
+    margin-top: 2rem;
+    padding: 0 7vw;
+    height: auto;
+    width: 100%;
+}
+
+.learn h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.learn-container {
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    gap: 1rem;
+    height: auto;
+    width: 100%;
+}
+
+.learn-item {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 0.25rem;
+    box-shadow: var(--box-shadow);
+    padding: 1rem 0;
+    background-color: var(--light-pink);
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.learn-item:hover {
+    background-color: var(--pink);
+}
+
+.learn-item p:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.learn-item img {
+    width: 70%;
+    height: auto;
+}
+
+/* learn end */
+
+/* courses start */
+
+.courses {
+    margin-top: 2rem;
+    padding: 0 7vw;
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+
+.courses h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.courses-glider-contain {
+    width: 100%;
+    height: auto;
+}
+
+.courses-glider {
+    height: auto;
+    width: 100%;
+}
+
+.no-js .courses-glider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.courses-item {
+    position: relative;
+    background-color: var(--light-pink);
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 0.25rem;
+    padding: 0 0 1rem;
+    height: auto;
+    width: 100%;
+}
+
+.js .courses-item~.courses-item {
+    margin-left: 1rem;
+}
+
+.courses-item:hover .courses-info {
+    transform: scaleY(1);
+}
+
+.courses-item img {
+    width: 100%;
+    height: auto;
+}
+
+.courses-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--pink);
+    transform: scaleY(0);
+    transform-origin: center bottom;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.5s;
+}
+
+.courses-info p {
+    color: var(--light-black);
+}
+
+.courses-info a {
+    color: black;
+    background-color: var(--white);
+    border-radius: 0.25rem;
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+}
+
+.courses-info a:hover {
+    outline: 2px solid black;
+}
+
+.js .courses-glider-prev,
+.js .courses-glider-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.82rem;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.5s;
+}
+
+.js .courses-glider-prev:hover,
+.js .courses-glider-next:hover {
+    color: #ff6a6d;
+}
+
+.js .courses-glider-prev {
+    left: 7vw;
+}
+
+.js .courses-glider-next {
+    right: 7.5vw;
+}
+
+.no-js .courses-glider-prev,
+.no-js .courses-glider-next {
+    display: none;
+}
+
+.js .courses-glider-contain .glider-dot.active {
+    background-color: #ff6a6d;
+}
+
+/* courses end */
+
+/* Main end */
+
+/* footer start */
+
+footer {
+    margin-top: 2rem;
+    background-color: var(--light-pink);
+    padding: 2rem 7vw;
+    height: auto;
+    width: 100%;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    height: auto;
+    width: 100%;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.news p {
+    color: var(--light-black);
+}
+
+.news div {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.news input[type=email] {
+    border: 1px solid grey;
+    border-left: none;
+    width: 100%;
+    padding: 0.82rem 0.5rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.news .fa-envelope {
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 0.25rem 0 0 0.25rem;
+    padding: 0.82rem;
+    font-size: 1.2rem;
+    transition: color 0.5s;
+}
+
+.news input[type=email]:focus+.fa-envelope {
+    color: var(--pink);
+}
+
+.news input[type=submit] {
+    padding: 0.62rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 0.25rem;
+    border: 1px solid grey;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.news input[type=submit]:hover {
+    background-color: var(--pink);
+}
+
+.quick nav,
+.useful nav {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.quick nav a,
+.useful nav a {
+    color: var(--light-black);
+    font-size: 1.1rem;
+    padding: 0.68rem;
+    transition: color 0.5s;
+}
+
+.quick nav a:hover,
+.useful nav a:hover {
+    color: #ff6a6d;
+}
+
+.quick nav a span,
+.useful nav a span {
+    margin-left: 0.5rem;
+}
+
+.educ p {
+    color: var(--light-black);
+    margin: 1rem 0;
+}
+
+footer address {
+    display: flex;
+    gap: 1rem;
+}
+
+footer address a {
+    color: black;
+    padding: 0.5rem;
+    background-color: var(--pink);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: color 0.5s;
+}
+
+address a:hover {
+    color: white;
+}
+
+.hidden {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    /* esses 4 são útil para fazer sumir da tela os <spans> usados nos icones, porém ainda ficarão salvos na estrutura, o que permite leitores de tela para cegos lerem eles = + acessibilidade */
+    display: block;
+}
+
+.copyright {
+    border-top: 1px solid grey;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+    height: auto;
+    width: 100%;
+}
+
+.copyright a {
+    transition: color 0.5s;
+}
+
+.copyright a:hover {
+    color: #ff6a6d;
+}
+
+/* footer end */
+
+
+
+@media (min-width:650px) {
+
+    header {
+        display: grid;
+        grid-template-columns: 0.8fr 1fr 1px;
+        grid-template-rows: 1fr;
+    }
+
+    .header-nav {
+        position: static;
+        flex-direction: row;
+        gap: 0.5rem;
+        transform: scale(1);
+    }
+
+    .header-nav a~a {
+        border: none;
+    }
+
+    header .nav-bar,
+    header .nav-close {
+        display: none;
+    }
+}
