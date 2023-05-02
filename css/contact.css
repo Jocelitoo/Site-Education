@@ -103,6 +103,7 @@ header .nav-close {
     font-size: 1.2rem;
     color: #000;
     cursor: pointer;
+    border-radius: 0.25rem;
     transition: background .5s, color .5s
 }
 
@@ -112,6 +113,10 @@ header .nav-close {
 
 .header-nav a:hover {
     background-color: #ff6a6d
+}
+
+.header-nav a:nth-of-type(4){
+    background-color: #ff6a6d;
 }
 
 .nav-bar,
@@ -186,6 +191,7 @@ main {
     align-items: center;
     gap: 0.5rem;
     padding: 2rem 0;
+    box-shadow: var(--box-shadow);
 }
 
 .connect-options-item i {

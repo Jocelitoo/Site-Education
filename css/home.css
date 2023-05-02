@@ -106,6 +106,7 @@ header .nav-close {
     font-size: 1.2rem;
     color: black;
     cursor: pointer;
+    border-radius: 0.25rem;
     transition: background 0.5s, color 0.5s;
 }
 
@@ -114,6 +115,10 @@ header .nav-close {
 }
 
 .header-nav a:hover {
+    background-color: #ff6a6d;
+}
+
+.header-nav a:nth-of-type(1){
     background-color: #ff6a6d;
 }
 
